@@ -6,6 +6,10 @@
  * @author iamRahul1973
  */
 
+if ( WP_DEBUG ) {
+	error_reporting( E_ALL );
+}
+
 /**
  * Add Extra Attributes to Enqueued Stylesheets.
  *

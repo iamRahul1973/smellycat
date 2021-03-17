@@ -6,10 +6,6 @@
  * @author iamRahul1973
  */
 
-if ( WP_DEBUG ) {
-	error_reporting( E_ALL );
-}
-
 if ( ! function_exists( 'ir73_theme_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -312,5 +308,37 @@ if ( ! function_exists( 'ir73_theme_setup' ) ) {
 
 add_action( 'after_setup_theme', 'ir73_theme_setup' );
 
+/**
+ * Show Plugin Missing Error in the dashboard.
+ *
+ * @return void
+ */
+function show_plugins_missing_notice() {
+	?>
+	<div class="notice notice-error is-dismissible">
+		<p>
+			<strong>SMELLYCAT SAYS :</strong> The Plug-In <a href="https://github.com/iamRahul1973/wp-ir73" target="_blank">WP IR73</a> Is 
+			Required In Order For Smellycat To Work.
+		</p>
+	</div>
+	<?php
+}
+
+/**
+ * Check if required plug-ins are active.
+ *
+ * @return void
+ */
+function check_for_required_plugins() {
+	if ( ! is_plugin_active( 'wp-ir73/wp-ir73.php' ) ) {
+		add_action( 'admin_notices', 'show_plugins_missing_notice' );
+	}
+}
+
+add_action( 'admin_init', 'check_for_required_plugins' );
+
+/**
+ * More Theme Customizations.
+ */
 require_once 'inc/widgets.php';
 require_once 'inc/customizations.php';

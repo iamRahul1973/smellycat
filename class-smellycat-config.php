@@ -12,7 +12,7 @@
 /**
  * IR73 Configuration Class
  */
-class IR73_Config {
+class Smellycat_Config {
 
 	/**
 	 * Whether the theme uses WordPress Custommizer.
