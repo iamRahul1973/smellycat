@@ -173,7 +173,7 @@ class Smellycat_Config {
 	 * --------------------------------------------------
 	 */
 	public function custom_taxonomies() {
-		/*
+
 		$food_category = new IR73_Taxonomies( 'food-category' );
 		$food_category->set_plural_label( 'Food Categories' );
 		$food_category->set_associated_object_type( 'food' );
@@ -183,7 +183,7 @@ class Smellycat_Config {
 		$food_group = new IR73_Taxonomies( 'food-group' );
 		$food_group->set_associated_object_type( 'food' );
 		$food_group->do();
-		*/
+
 	}
 
 	/**
@@ -220,8 +220,8 @@ class Smellycat_Config {
 	 */
 	public function sortable_objects(): array {
 		return array(
-			'cpt'      => array( 'faq', 'partner' ),
-			'taxonomy' => array(),
+			'cpt'      => array( 'post', 'page' ),
+			'taxonomy' => array( 'category' ),
 		);
 	}
 

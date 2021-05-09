@@ -13,7 +13,7 @@ return array(
 		'ID'          => 'hero-sliders',
 		'title'       => 'Hero Sliders',
 		'object'      => 'page',
-		'restrict_to' => array( 6, 37 ),
+		'restrict_to' => array( 2 ),
 		'fields'      => array(
 
 			array(
@@ -33,11 +33,6 @@ return array(
 			),
 			array(
 				'key'  => 'image',
-				'type' => 'media',
-				'col'  => '2',
-			),
-			array(
-				'key'  => 'mobile_image',
 				'type' => 'media',
 				'col'  => '2',
 			),
